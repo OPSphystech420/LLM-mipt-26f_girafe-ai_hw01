@@ -1,0 +1,17 @@
+.venv*/
+.cache/
+.local/
+index/
+data/
+models/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+corpus.jsonl
+*.pdf
+*.safetensors
+*.bin
+*.sqlite*
+*.log
+

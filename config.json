@@ -1,0 +1,27 @@
+{
+  "runtime": "runtime.json",
+  "system": {
+    "mode": "no_stemming",
+    "context_tokens": 3200,
+    "plan_sources": false
+  },
+  "retrieval": {
+    "embedding": {
+      "model_id": "Xenova/multilingual-e5-small",
+      "revision": "761b726dd34fb83930e26aab4e9ac3899aa1fa78",
+      "base_model": "intfloat/multilingual-e5-small",
+      "parameters": 117650688,
+      "file": "onnx/model_quantized.onnx",
+      "device": "cpu",
+      "enabled": false
+    },
+    "dense_weight": 0.5,
+    "chunk_chars": 2200,
+    "overlap_chars": 300,
+    "rrf_k": 30,
+    "top_k": 5,
+    "baseline_top_k": 5,
+    "neighbor_limit": 2,
+    "single_search": true
+  }
+}

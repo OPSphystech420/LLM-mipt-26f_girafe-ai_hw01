@@ -1,0 +1,35 @@
+{
+  "model_id": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "quantization": {
+    "backend": "mlx-lm",
+    "bits": 16,
+    "mode": "none",
+    "dtype": "bfloat16"
+  },
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "min_p": 0.0,
+    "seed": 42,
+    "max_tokens": 1100,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "presence_penalty": 1.5,
+    "repetition_penalty": 1.0
+  },
+  "limits": {
+    "llm_calls": 4,
+    "input_tokens": 16384,
+    "output_tokens": 4096,
+    "request_tokens": 8192
+  },
+  "timeout_seconds": 240,
+  "retrieval_device": "cpu",
+  "ram_limit_gb": 16,
+  "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+  "note": "Параметры заданы для работы по уточнению преподавателя от 22.10.2026. Одинаковы во всех экспериментах.",
+  "development_base_url": "http://127.0.0.1:8082/v1"
+}
