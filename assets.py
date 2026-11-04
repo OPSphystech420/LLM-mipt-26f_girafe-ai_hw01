@@ -127,9 +127,9 @@ def adopt_built_index(index, config, cache_root):
         expected = manifest.get("tokenizer", {}).get(relative)
         previous = manifest.get("assets", {}).get(relative)
         if expected is not None and expected != digest:
-            raise ValueError(f"Built tokenizer hash mismatch: {relative}")
+            raise ValueError(f"Built tokenizer differs from the expected file: {relative}")
         if previous is not None and (previous.get("source") != source or previous.get("sha256") != digest):
-            raise ValueError(f"Built source or asset hash mismatch: {relative}")
+            raise ValueError(f"Built source or asset differs from the expected file: {relative}")
         record = {"version": 1, "source": source,
                   "source_url": f"https://huggingface.co/{source['model_id']}/resolve/{source['revision']}/{source['file']}",
                   "sha256": digest, "bytes": path.stat().st_size,

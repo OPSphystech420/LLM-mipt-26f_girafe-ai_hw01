@@ -51,7 +51,7 @@ def main():
     from evaluate import CSV_FIELDS
     import csv
     with Path(args.output).open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS)
+        writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS, lineterminator="\n")
         writer.writeheader()
         for metrics in collected:
             writer.writerow({field: metrics.get(field) for field in CSV_FIELDS})

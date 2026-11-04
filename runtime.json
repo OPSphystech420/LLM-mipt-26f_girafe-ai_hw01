@@ -30,6 +30,5 @@
   "retrieval_device": "cpu",
   "ram_limit_gb": 16,
   "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B",
-  "note": "Параметры заданы для работы по уточнению преподавателя от 22.10.2026. Одинаковы во всех экспериментах.",
   "development_base_url": "http://127.0.0.1:8082/v1"
 }

@@ -192,4 +192,3 @@ def build_payload(blocks, settings, math_normalization=True, stemming=True):
     if not documents:
         raise ValueError("Corpus contains no searchable text")
     return {"version": 3, "tokenization": {"math_normalization": math_normalization, "stemming": stemming}, "blocks": blocks, "documents": documents, "lengths": lengths, "postings": dict(postings)}
-

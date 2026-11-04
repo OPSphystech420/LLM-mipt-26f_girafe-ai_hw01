@@ -81,4 +81,3 @@ class Client:
             raise
         finally:
             entry["elapsed_ms"] = round((time.perf_counter() - started) * 1000, 3)
-

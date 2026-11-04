@@ -1,0 +1,65 @@
+{
+  "corpus_sha256": "57bd6337293704d423a153ee8476c145a9bf67f4a51f85cec82d1c6722973789",
+  "blocks": 754,
+  "chunks": 754,
+  "build_seconds": 0.6452589580003405,
+  "peak_ram_mb": 55.265625,
+  "index_bytes": 1343492,
+  "index_files": {
+    "index.json": 1343492,
+    "index_no_math.json": 1339288,
+    "index_no_stemming.json": 1411330
+  },
+  "index_version": 3,
+  "python": "3.11.14",
+  "retrieval": {
+    "embedding": {
+      "model_id": "Xenova/multilingual-e5-small",
+      "revision": "761b726dd34fb83930e26aab4e9ac3899aa1fa78",
+      "base_model": "intfloat/multilingual-e5-small",
+      "parameters": 117650688,
+      "file": "onnx/model_quantized.onnx",
+      "device": "cpu",
+      "enabled": false
+    },
+    "dense_weight": 0.5,
+    "chunk_chars": 2200,
+    "overlap_chars": 300,
+    "rrf_k": 30,
+    "top_k": 5,
+    "baseline_top_k": 5,
+    "neighbor_limit": 2,
+    "single_search": true
+  },
+  "assets": {
+    "tokenizer.json": {
+      "adopted_build_manifest_sha256": "e37e706c81aecd86ebd2dd6ada7a90ec345c0929697eb067b6fdb14c1d3a2056",
+      "bytes": 12807982,
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "source": {
+        "file": "tokenizer.json",
+        "model_id": "Qwen/Qwen3.5-4B",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+      },
+      "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json",
+      "version": 1
+    },
+    "chat_template.jinja": {
+      "adopted_build_manifest_sha256": "e37e706c81aecd86ebd2dd6ada7a90ec345c0929697eb067b6fdb14c1d3a2056",
+      "bytes": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+      "source": {
+        "file": "chat_template.jinja",
+        "model_id": "Qwen/Qwen3.5-4B",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+      },
+      "source_url": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/chat_template.jinja",
+      "version": 1
+    }
+  },
+  "output_bytes": 16910830,
+  "tokenizer": {
+    "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+  }
+}

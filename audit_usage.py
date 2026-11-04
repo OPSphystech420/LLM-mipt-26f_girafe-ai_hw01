@@ -1,4 +1,4 @@
-"""Match trace usage and hashes against an independent endpoint journal."""
+"""Compare saved requests with the endpoint journal."""
 import argparse
 import json
 from pathlib import Path
@@ -27,7 +27,7 @@ def audit(traces, journal, runtime, submission_id):
             if record["status"] != "ok" or record["model_revision"] != runtime["revision"]:
                 raise ValueError("Unexpected model or endpoint status")
             if record["request_sha256"] != request["prompt_sha256"] or record["response_sha256"] != request["response_sha256"]:
-                raise ValueError("Request or response hash mismatch")
+                raise ValueError("Request or response differs from the endpoint record")
             for local, remote in (("input_tokens", "prompt_tokens"), ("output_tokens", "completion_tokens")):
                 if request[local] != record["usage"][remote]:
                     raise ValueError("Token usage mismatch")
@@ -58,7 +58,6 @@ def main():
     result = audit(traces, read_jsonl(args.endpoint_log),
                    json.loads(Path(args.runtime).read_text()), args.submission_id)
     result.update(trace_sha256=sha256_file(args.trace), runtime_sha256=sha256_file(args.runtime))
-    # Preserve the recorded runtime identity when publication metadata changes.
     recorded_hashes = sorted({trace["runtime_sha256"] for trace in traces if "runtime_sha256" in trace})
     if recorded_hashes:
         result["trace_runtime_sha256"] = recorded_hashes

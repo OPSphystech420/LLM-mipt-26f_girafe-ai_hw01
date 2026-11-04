@@ -1,0 +1,14 @@
+{
+  "questions": 15,
+  "input_tokens": 32544,
+  "output_tokens": 2646,
+  "llm_calls": 16,
+  "max_request_tokens": 4124,
+  "peak_mlx_memory_gb": 10.21374422,
+  "endpoint_match": true,
+  "trace_sha256": "4a1987ab9062c9260fd3a60ec4364399cfa93c620158ae483d404056c25cd1da",
+  "runtime_sha256": "ed20113853800cff563fe65b216d020570c9e32689e0dd274b857cda70f91e1d",
+  "trace_runtime_sha256": [
+    "36cf96344ed24caa32ee983e6d550a44ee71034106369ce00c539891e0b3761a"
+  ]
+}

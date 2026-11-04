@@ -182,7 +182,7 @@ def main():
     parser.add_argument("--name", default="final")
     parser.add_argument("--output")
     parser.add_argument("--csv", help="Append one row with the required experiment columns")
-    parser.add_argument("--rationale-audit", help="Hash-bound content review, evaluation only")
+    parser.add_argument("--rationale-audit", help="Content review for the saved answers")
     args = parser.parse_args()
     try:
         corpus_ids = None if not args.corpus else {row["block_id"] for row in read_jsonl(args.corpus)}
@@ -203,7 +203,7 @@ def main():
         path = Path(args.csv)
         exists = path.exists() and path.stat().st_size > 0
         with path.open("a", newline="", encoding="utf-8") as stream:
-            writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS, extrasaction="ignore")
+            writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS, extrasaction="ignore", lineterminator="\n")
             if not exists:
                 writer.writeheader()
             writer.writerow(result)

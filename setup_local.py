@@ -91,7 +91,7 @@ def download_source(cache, workers):
                         sha.update(chunk)
                         output.write(chunk)
         if sha.hexdigest() != expected_hash:
-            raise ValueError(f"SHA256 mismatch: {name}")
+            raise ValueError(f"Downloaded file is corrupted: {name}")
         temporary.replace(target)
         shutil.rmtree(part_dir)
     return str(source)

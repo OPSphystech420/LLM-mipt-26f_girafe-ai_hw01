@@ -1,4 +1,4 @@
-"""Fetch the single allowed PDF and verify its checksum."""
+"""Download the textbook PDF."""
 import argparse
 import hashlib
 from pathlib import Path
@@ -19,7 +19,7 @@ def main():
         with urlopen(URL, timeout=120) as response:
             data = response.read()
     if hashlib.sha256(data).hexdigest() != SHA256:
-        raise ValueError("PDF checksum differs from the recorded source")
+        raise ValueError("PDF differs from the expected source")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(data)
     print(path)

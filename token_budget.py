@@ -35,4 +35,3 @@ class ChatTokenizer:
 
     def count(self, messages):
         return len(self.tokenizer.encode(self.render(messages), add_special_tokens=False).ids)
-

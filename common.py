@@ -61,4 +61,3 @@ def check_questions(rows):
             raise ValueError(f"{identifier}: invalid option ids")
         if any(not isinstance(opt.get("text"), str) or not opt["text"].strip() for opt in options):
             raise ValueError(f"{identifier}: empty option")
-
